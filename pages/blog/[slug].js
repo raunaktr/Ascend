@@ -1,4 +1,8 @@
+import he from "he";
 import Head from "next/head";
+import Image from "next/image";
+import hydrate from "next-mdx-remote/hydrate";
+import renderToString from "next-mdx-remote/render-to-string";
 
 import { getBlogSlugs, getPost } from "../../lib/data";
 
@@ -17,12 +21,12 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       post: post.posts[0],
-      // content: await renderToString(he.decode(portfolioItem.portfolios[0].content)),
+      content: await renderToString(he.decode(post.posts[0].content)),
     },
   };
 };
 
-export default function Home({ post }) {
+export default function Home({ post, content }) {
   console.log(post);
 
   return (
@@ -34,6 +38,18 @@ export default function Home({ post }) {
       </Head>
       <div>
         <h1>{post.title}</h1>
+        <p>{post.description}</p>
+        <div>
+          {post.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+          <Image
+            src={post.author.image.url}
+            height={post.author.image.height}
+            width={post.author.image.width}
+          />
+          <div>{hydrate(content)}</div>
+        </div>
       </div>
     </div>
   );

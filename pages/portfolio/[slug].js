@@ -1,4 +1,8 @@
+import he from "he";
 import Head from "next/head";
+import Image from "next/image";
+import hydrate from "next-mdx-remote/hydrate";
+import renderToString from "next-mdx-remote/render-to-string";
 
 import { getPortfolioItem, getPortfolioSlugs } from "../../lib/data";
 
@@ -17,12 +21,12 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       portfolioItem: portfolioItem.portfolios[0],
-      // content: await renderToString(he.decode(portfolioItem.portfolios[0].content)),
+      content: await renderToString(he.decode(portfolioItem.portfolios[0].content)),
     },
   };
 };
 
-export default function Home({ portfolioItem }) {
+export default function Home({ portfolioItem, content }) {
   console.log(portfolioItem);
 
   return (
@@ -34,6 +38,18 @@ export default function Home({ portfolioItem }) {
       </Head>
       <div>
         <h1>{portfolioItem.title}</h1>
+        <p>{portfolioItem.description}</p>
+        <div>
+          {portfolioItem.tags.map((tag) => (
+            <span key={tag}> {tag}</span>
+          ))}
+          <Image
+            src={portfolioItem.coverImage.url}
+            height={portfolioItem.coverImage.height}
+            width={portfolioItem.coverImage.width}
+          />
+          <div>{hydrate(content)}</div>
+        </div>
       </div>
     </div>
   );
