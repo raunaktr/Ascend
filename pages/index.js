@@ -6,10 +6,11 @@ import { getPostsAndPortfolio } from "../lib/data";
 export const getStaticProps = async () => {
   const data = await getPostsAndPortfolio();
   return {
-    props: { data },
+    props: {
+      data,
+    },
   };
 };
-
 export default function Home({ data }) {
   console.log(data);
   return (
@@ -22,7 +23,7 @@ export default function Home({ data }) {
       <div>
         {data?.portfolios?.map((item) => (
           <div key={item.slug}>
-            <Link href={`/portfolios/${item.slug}`}>
+            <Link href={`/portfolio/${item.slug}`}>
               <a>{item.title}</a>
             </Link>
           </div>
@@ -31,7 +32,7 @@ export default function Home({ data }) {
       <div className="mt-10">
         {data?.posts?.map((post) => (
           <div key={post.slug}>
-            <Link href={`/portfolios/${post.slug}`}>
+            <Link href={`/blog/${post.slug}`}>
               <a>{post.title}</a>
             </Link>
           </div>
