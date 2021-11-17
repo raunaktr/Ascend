@@ -47,7 +47,7 @@ export default function Home({ data }) {
             <div className="flex flex-wrap justify-starts items-center mt-4">
               {item.tags.map((tag) => (
                 <span
-                  className="text-xs m-1 py-1.5 px-4 text-base-content bg-blue-200 rounded-2xl"
+                  className="uppercase text-xs m-1 py-1.5 px-4 text-base-content bg-blue-200 rounded-2xl"
                   key={tag}>
                   {tag}
                 </span>

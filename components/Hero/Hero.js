@@ -4,7 +4,7 @@ export default function Hero() {
       <div className="hero min-h-screen">
         <div className="relative px-4 xl-px-0 container mx-auto grid sm:grid-cols-1 md-grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
           <div className="text-color p-1">
-            <h1 className="text-6xl w-1/2 xl:w-full xl:text-9xl md:text-6xl sm:text-5xl font-black f-f-l">
+            <h1 className="text-6xl w-1/2 xl:w-full xl:text-8xl md:text-5xl sm:text-5xl font-black f-f-l">
               Learn. <span className="text-primary">Analyze. </span>Apply.
             </h1>
             <div className="f-f-r text-xl lg:text-3xl pb-20 sm:pb-0 pt-10 xl:pt-20">
