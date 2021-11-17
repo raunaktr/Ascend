@@ -6,10 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
+    "build:tailwind": "tailwind build styles/index.css -o styles/tailwind.css",
     "lint": "eslint --fix .",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.1",
+    "@heroicons/react": "^1.0.4",
+    "@next/eslint-plugin-next": "^12.0.3",
+    "@popperjs/core": "^2.10.2",
+    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/typography": "^0.4.1",
+    "daisyui": "^1.16.2",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -20,15 +29,16 @@
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
     "he": "^1.2.0",
-    "next": "10.2.0",
+    "next": "^12.0.3",
     "next-mdx-remote": "^2.1.4",
     "prettier": "^2.2.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "postcss": "^8.2.13",
-    "tailwindcss": "^2.1.2"
+    "@types/tailwindcss": "^2.2.4",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19"
   }
 }
