@@ -30,15 +30,17 @@ export default function Home({ portfolioItem, content }) {
   console.log(portfolioItem);
 
   return (
-    <div>
+    <>
       <Head>
         <title>{portfolioItem.title}</title>
         <meta name="description" content="{portfolioItem.description}" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
-        <h1 className="text-6xl font-bold text-gray-900">{portfolioItem.title}</h1>
-        <div className="flex justify-between items-center">
+        <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900">
+          {portfolioItem.title}
+        </h1>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-4">
           <p className="text-gray-700">{new Date(portfolioItem.date).toDateString()}</p>
           <div className="flex space-x-3 my-10">
             {portfolioItem.tags.map((tag) => (
@@ -56,8 +58,8 @@ export default function Home({ portfolioItem, content }) {
           height={portfolioItem.coverImage.height}
           width={portfolioItem.coverImage.width}
         />
-        <div className="prose prose-xl max-w-none">{hydrate(content)}</div>
+        <div className="prose prose-xl prose-dark max-w-none w-full mt-4">{hydrate(content)}</div>
       </div>
-    </div>
+    </>
   );
 }

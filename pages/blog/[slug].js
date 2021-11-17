@@ -36,7 +36,7 @@ export default function Home({ post, content }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
-        <h1 className="text-6xl font-bold text-gray-900">{post.title}</h1>
+        <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900">{post.title}</h1>
         <div className="flex space-x-3 my-10">
           {post.tags.map((tag) => (
             <span
@@ -60,7 +60,7 @@ export default function Home({ post, content }) {
           </div>
         </div>
         <hr className="mt-5 mb-10" />
-        <div className="prose prose-xl max-w-none">{hydrate(content)}</div>
+        <div className="prose prose-xl prose-dark max-w-none w-full mt-4">{hydrate(content)}</div>
       </div>
     </div>
   );
