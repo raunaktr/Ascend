@@ -39,15 +39,17 @@ export default function Home({ post, content }) {
       <div>
         <h1>{post.title}</h1>
         <p>{post.description}</p>
+        <span>{new Date(post.date).toDateString()}</span>
+        <Image
+          src={post.author.image.url}
+          height={post.author.image.height}
+          width={post.author.image.width}
+        />
         <div>
           {post.tags.map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
-          <Image
-            src={post.author.image.url}
-            height={post.author.image.height}
-            width={post.author.image.width}
-          />
+
           <div>{hydrate(content)}</div>
         </div>
       </div>

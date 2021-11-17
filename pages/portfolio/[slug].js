@@ -39,17 +39,18 @@ export default function Home({ portfolioItem, content }) {
       <div>
         <h1>{portfolioItem.title}</h1>
         <p>{portfolioItem.description}</p>
+        <span>{new Date(portfolioItem.date).toDateString()}</span>
+        <Image
+          src={portfolioItem.coverImage.url}
+          height={portfolioItem.coverImage.height}
+          width={portfolioItem.coverImage.width}
+        />
         <div>
           {portfolioItem.tags.map((tag) => (
             <span key={tag}> {tag}</span>
           ))}
-          <Image
-            src={portfolioItem.coverImage.url}
-            height={portfolioItem.coverImage.height}
-            width={portfolioItem.coverImage.width}
-          />
-          <div>{hydrate(content)}</div>
         </div>
+        <div>{hydrate(content)}</div>
       </div>
     </div>
   );
