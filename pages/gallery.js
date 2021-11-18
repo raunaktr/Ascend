@@ -40,6 +40,7 @@ export default function Gallery({ blurredPhotos }) {
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0 grid grid-cols-2 gap-3">
       {blurredPhotos?.map((photo) => (
         <Image
+          key={photo.id}
           src={photo.src}
           width={photo.width / 2}
           height={photo.height / 2}
