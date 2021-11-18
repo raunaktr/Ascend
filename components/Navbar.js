@@ -50,6 +50,9 @@ export default function Navbar() {
             <Link href="/blog">
               <a className="btn btn-ghost btn-sm rounded-btn">Blog</a>
             </Link>
+            <Link href="/gallery">
+              <a className="btn btn-ghost btn-sm rounded-btn">Gallery</a>
+            </Link>
           </div>
         </div>
       </nav>
