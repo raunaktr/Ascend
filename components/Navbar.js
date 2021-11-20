@@ -11,10 +11,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar flex flex-wrap bg-base-200 shadow-lg mb-2 py-10 px-4">
+      <nav className="navbar flex flex-wrap shadow-lg mb-2 py-10 px-4">
         <Link href="/">
           <a className="inline-flex items-center px-2 mx-4 ">
-            <img src={logo.src} height={68} width={150} />
+            <img src={logo.src} height={68} width={140} alt="ascend" />
           </a>
         </Link>
         <button
