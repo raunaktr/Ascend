@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-
-// import logo from "../assets/images/logo.svg";
+import logo from "../assets/images/logo.webp";
 
 export default function Navbar() {
   const [active, setActive] = useState(false);
@@ -15,7 +14,7 @@ export default function Navbar() {
       <nav className="navbar flex flex-wrap bg-base-200 shadow-lg mb-2 py-10 px-4">
         <Link href="/">
           <a className="inline-flex items-center px-2 mx-4 ">
-            <span className="text-xl font-bold">Ascend</span>
+            <img src={logo.src} height={68} width={150} />
           </a>
         </Link>
         <button

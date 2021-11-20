@@ -42,7 +42,6 @@ export const getStaticProps = async () => {
 };
 
 export default function BlogPage({ posts }) {
-  console.log(posts);
   const [searchValue, setSearchValue] = useState("");
   const [skip, setSkip] = useState(0);
   const { data, error } = useSWR(

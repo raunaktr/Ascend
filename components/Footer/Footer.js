@@ -1,4 +1,23 @@
 /* eslint-disable react/display-name */
+const footerLinks = [
+  {
+    name: "About",
+    href: "/about",
+  },
+  {
+    name: "Portfolio",
+    href: "/portfolio",
+  },
+  {
+    name: "Blog",
+    href: "/blog",
+  },
+  {
+    name: "Gallery",
+    href: "/gallery",
+  },
+];
+
 const social = [
   {
     name: "Facebook",
@@ -52,17 +71,24 @@ const social = [
 
 export default function Footer() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0 flex flex-col justify-center">
-      <div className="mt-8 flex justify-center space-x-6">
+    <div className="pt-10 mt-20 footer bg-base-200 text-base-content footer-center">
+      <div className="grid grid-flow-col gap-4">
+        {footerLinks.map((item) => (
+          <a key={item.name} href={item.href} className="link link-hover hover:text-primary">
+            {item.name}
+          </a>
+        ))}
+      </div>
+      <div className="grid grid-flow-col gap-4">
         {social.map((item) => (
-          <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+          <a key={item.name} href={item.href} className="link link-hover hover:text-primary">
             <span className="sr-only">{item.name}</span>
             <item.icon className="h-6 w-6" aria-hidden="true" />
           </a>
         ))}
       </div>
       <div className="text-gray-500 text-center mt-4 mb-10">
-        &copy;{new Date().getFullYear()} Ascend Education
+        Copyright &copy; {new Date().getFullYear()} All right reserved by Ascend
       </div>
     </div>
   );
