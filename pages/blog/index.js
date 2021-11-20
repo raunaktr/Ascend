@@ -124,7 +124,7 @@ export default function BlogPage({ posts }) {
             }}
             disabled={!data.postsConnection.pageInfo.hasPreviousPage}
             className="btn btn-outline disabled:btn-disabled">
-            Previous Page
+            Previous
           </button>
           <button
             onClick={() => {
@@ -132,7 +132,7 @@ export default function BlogPage({ posts }) {
             }}
             disabled={!data.postsConnection.pageInfo.hasNextPage}
             className="btn btn-outline disabled:btn-disabled">
-            Next Page
+            Next
           </button>
         </div>
         <div className="text-gray-700">
